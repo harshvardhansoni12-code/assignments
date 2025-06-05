@@ -5,6 +5,11 @@ const express = require('express');
 const app = express();
 let errorCount = 0;
 
+app.use(function(){
+  errorCount = errorCount + 1; 
+}
+        next();
+)
 // You have been given an express server which has a few endpoints.
 // Your task is to
 // 1. Ensure that if there is ever an exception, the end user sees a status code of 404
